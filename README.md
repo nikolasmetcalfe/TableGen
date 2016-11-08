@@ -47,3 +47,8 @@ Wireframe
 Sitemap
 
 ![Map](/documentation/SiteMap.jpg?raw=true "Site Map")
+
+User Stories
+1. As a user, I can view all available patch downloads
+2. As a user, I can register for notifications about new patches
+3. As a user, I can download a patch (on-click?)
