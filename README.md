@@ -36,7 +36,7 @@ Wireframe
 ![Home](/documentation/Home.jpg?raw=true "Home Page")
 
 /home/slug-- Description of patch, DL link, image of patch in use
-![Patch](/documentation/Home/Slug.jpg?raw=true "Patch Page")
+![Patch](/documentation/Slug.jpg?raw=true "Patch Page")
 
 /login-- Links to registration, authenticates user
 ![Login](/documentation/Login.jpg?raw=true "Login Page")
