@@ -47,3 +47,12 @@ Wireframe
 Sitemap
 
 ![Map](/documentation/SiteMap.jpg?raw=true "Site Map")
+
+User Stories
+1. As a user, I can view all patches in database
+2. As a user, I can register to receive updates about new patches
+3. As a user, I can download patches once logged in
+
+Research Topics
+(6 Points)-- Use passport.js for user authentication in order to ensure updates are sent to authentic users
+(2 Points)-- Use bootstrap CSS in order to make patch specific pages both clean and standardized
