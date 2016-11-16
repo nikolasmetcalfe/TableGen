@@ -1,58 +1,61 @@
-# Sound Design Portfolio
+# Table Generator
 
 Overview
 
-I have an enormous love for DIY audio projects. The problem that I've run into showcasing work
-is that the span of what I'm displaying is too wide to make sense in a traditional blog format.
-Instead, I'd like to create a personal page that hosts Pure Data and Supercollider patches
-that I've utilized in making noisy tunes. Users can log in to access patch downloads and 
-opt to receive updates when a new music-making tool is posted.
+LSDJ (http://www.littlesounddj.com/lsd/) is a software tracker (https://en.wikipedia.org/wiki/Music_tracker) written 
+for the Gameboy to create 8-bit music. 
+Of the four tracks used to generate sound in LSDJ, two of these are pulse tracks, often 
+used for lead lines in LSDJ compositions. 
+For musicians in need of adding depth to a lead, an automated LSDJ table can be a useful tool. 
+Set to automate, an LSDJ table will warp the sonic characteristis of a pulse every time a new note is triggered.
+This web application will allow users to generate pulse tables with randomized values for use on LSDJ pulse tracks,
+either as final patches or as jumping off points for sound shaping ideas.
+Users of the application can save patches and retrieve the patches saved to their user profile during prior sessions.
 
 
 Data Model
 
 // At minimum users will need to provide a username and password
-// for authentication, and an email for freeware updates
+// in order to retrieve patches saved to a profile
 var User = new mongoose.Schema
 ({
 	username: String,
 	password: String,
-	email: String,
-	onList: Number
+	patches:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Patch' }]
 )};
 
-// At minimum I will need store links to repo's containing PD
-// or Supercollider code (would like to make this an on-click download of binaries)
+// At minimum I will need store an array of values corresponding
+// to each column in an LSDJ table (all of size 16)
 var Patch = new mongoose.Schema
 ({
-	title: String,
-	url: String,
-	imageUrl: String
+	volume = [],
+	transpose = [],
+	commandOne = [],
+	commandOneParams = [],
+	commandTwo = [],
+	commandTwoParams = []
 )};
 
 Wireframe
 
-/home-- Has an about section, links to login and hosts patches
-![Home](/documentation/Home.jpg?raw=true "Home Page")
+/generate-- Main app page where columns can be automated or users can enter input
+![Home](/documentation/Generate.jpg?raw=true "Table Generation Page")
 
-/home/slug-- Description of patch, DL link, image of patch in use
-![Patch](/documentation/Slug.jpg?raw=true "Patch Page")
+/patches-- List of all tables saved by a given profile
+![Patch](/documentation/Patches.jpg?raw=true "User Patches Page")
 
-/login-- Links to registration, authenticates user
+/login-- Allows users to save patches for a given profile name
 ![Login](/documentation/Login.jpg?raw=true "Login Page")
-
-/register-- Stores a user's info for future sessions
-![Register](/documentation/Register.jpg?raw=true "Register Page")
 
 Sitemap
 
 ![Map](/documentation/SiteMap.jpg?raw=true "Site Map")
 
 User Stories
-1. As a user, I can view all patches in database
-2. As a user, I can register to receive updates about new patches
-3. As a user, I can download patches once logged in
+1. As a user, I can create an entirely random table from the generation page
+2. As a user, I can save that table to my profile
+3. As a user, I can view all tables saved under my username at /patches
 
 Research Topics
-(6 Points)-- Use passport.js for user authentication in order to ensure updates are sent to authentic users
+(6 Points)-- Use passport.js for user authentication in order to ensure patches are retrieved by correct users
 (2 Points)-- Use bootstrap CSS in order to make patch specific pages both clean and standardized
