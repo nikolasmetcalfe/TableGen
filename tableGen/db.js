@@ -6,18 +6,18 @@ var User = new mongoose.Schema
 	username: String, 
 	password: String, 
 	patches: [{type: mongoose.Schema.Types.ObjectId, ref: 'Patch'}] 
-)};
+});
 
 var Patch = new mongoose.Schema 
 ({ 
-	volume = [], 
-	transpose = [], 
-	commandOne = [], 
-	commandOneParams = [], 
-	commandTwo = [], 
-	commandTwoParams = [],
+	volume : [Number], 
+	transpose : [Number], 
+	commandOne : [Number], 
+	commandOneParams : [Number], 
+	commandTwo : [Number], 
+	commandTwoParams : [Number],
 	name: String
-)};
+});
 
 Patch.plugin(URLSlugs('name'));
 
