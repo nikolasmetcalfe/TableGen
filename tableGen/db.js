@@ -10,12 +10,12 @@ var User = new mongoose.Schema
 
 var Patch = new mongoose.Schema 
 ({ 
-	volume : [Number], 
-	transpose : [Number], 
-	commandOne : [Number], 
-	commandOneParams : [Number], 
-	commandTwo : [Number], 
-	commandTwoParams : [Number],
+	volume : [String],
+	transpose : [String], 
+	commandOne : [String], 
+	commandOneParams : [String], 
+	commandTwo : [String], 
+	commandTwoParams : [String],
 	name: String
 });
 
