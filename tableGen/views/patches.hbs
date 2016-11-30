@@ -4,7 +4,9 @@
 <th>
   <div>
     {{this.name}}<br>
-    {{this.volume}}
+    {{#each volume}}
+    <div>{{this}}</div>
+    {{/each}}
   </div>
 </th>
 </tr>
