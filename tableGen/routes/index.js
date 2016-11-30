@@ -15,7 +15,7 @@ router.get('/clearAll', function(req, res, next)
 {
 	Patch.remove({}, function(err, result, count)
 	{ 
-		res.render('patches');
+		res.render('patches', {result});
 	});
 });
 
