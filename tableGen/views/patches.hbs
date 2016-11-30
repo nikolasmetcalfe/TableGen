@@ -1,9 +1,25 @@
 <table>
-  {{#each result}}
-  <tr>
-      <th>{{this.volume}}</th>
-  </tr>
-  {{/each}}
+{{#each result}}
+<tr>
+<th>
+  <div>
+    {{this.name}}<br>
+    {{this.volume}}
+  </div>
+</th>
+</tr>
+{{/each}}
 </table>
 
-<a href="/">New Table</a>
+<br>
+<a href="/">New Patch</a>
+
+<br>
+<button type="button" class="clearButton" onclick="clearPatches()">Clear Patches</button>
+
+<script type = "text/javascript">
+function clearPatches()
+{
+    window.location.href = "/clearAll";
+}
+</script>

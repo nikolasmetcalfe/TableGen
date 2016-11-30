@@ -1,1 +1,6 @@
-
+.clearButton
+{
+	height: 20px;
+	width: 90px;
+	display: block;
+}

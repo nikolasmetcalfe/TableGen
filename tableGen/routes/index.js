@@ -11,6 +11,14 @@ router.get('/', function(req, res, next)
 	res.redirect('generate');
 });
 
+router.get('/clearAll', function(req, res, next)
+{
+	Patch.remove({}, function(err, result, count)
+	{ 
+		res.render('patches', {result});
+	});
+});
+
 router.get('/generate', function(req, res, next)
 {
 	res.render('generate');
@@ -87,6 +95,8 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	var patchName = req.body.patchName + "";
+	
 	new Patch
 	({
 		volume: vol,
@@ -95,7 +105,7 @@ router.post('/generate', function(req, res, next)
 		commandOneParams : [], 
 		commandTwo : [], 
 		commandTwoParams : [],
-		name: "empty"
+		name: patchName,
 	}).save(function(err, Patch, count)
 	{
 		res.redirect('/patches');
