@@ -34,7 +34,8 @@ router.get('/patches', function(req, res, next)
 
 router.post('/generate', function(req, res, next)
 {	
-	vol = [];
+	var vol = [];
+	var tsp = [];
 	
 	var vol0 = (req.body.vol0);
 	var vol1 = (req.body.vol1);
