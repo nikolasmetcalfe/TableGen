@@ -71,6 +71,40 @@ router.post('/generate', function(req, res, next)
 	vol.push(vol14);
 	vol.push(vol15);
 	
+	var tsp0 = (req.body.tsp0);
+	var tsp1 = (req.body.tsp1);
+	var tsp2 = (req.body.tsp2);
+	var tsp3 = (req.body.tsp3);
+	var tsp4 = (req.body.tsp4);
+	var tsp5 = (req.body.tsp5);
+	var tsp6 = (req.body.tsp6);
+	var tsp7 = (req.body.tsp7);
+	var tsp8 = (req.body.tsp8);
+	var tsp9 = (req.body.tsp9);
+	var tsp10 = (req.body.tsp10);
+	var tsp11 = (req.body.tsp11);
+	var tsp12 = (req.body.tsp12);
+	var tsp13 = (req.body.tsp13);
+	var tsp14 = (req.body.tsp14);
+	var tsp15 = (req.body.tsp15);
+	
+	tsp.push(tsp0);
+	tsp.push(tsp1);
+	tsp.push(tsp2);
+	tsp.push(tsp3);
+	tsp.push(tsp4);
+	tsp.push(tsp5);
+	tsp.push(tsp6);
+	tsp.push(tsp7);
+	tsp.push(tsp8);
+	tsp.push(tsp9);
+	tsp.push(tsp10);
+	tsp.push(tsp11);
+	tsp.push(tsp12);
+	tsp.push(tsp13);
+	tsp.push(tsp14);
+	tsp.push(tsp15);
+	
 	var temp1 = '';
 	var temp2 = '';
 	
@@ -96,12 +130,34 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	for (var i = 0; i < tsp.length; i++)
+	{
+		if (tsp[i].length === 1 || tsp[i].length === 0)
+		{
+			temp1 = "0";
+			temp2 = "0";
+			tsp[i] = temp1 + temp2;
+		}
+		else
+		{
+			if (checkInput(tsp[i][0]))
+				temp1 = tsp[i][0];
+			else
+				temp1 = toHex('');
+			if (checkInput(tsp[i][1]))
+				temp2 = tsp[i][1];
+			else
+				temp2 = toHex('');
+			tsp[i] = temp1 + temp2;
+		}
+	}
+	
 	var patchName = req.body.patchName + "";
 	
 	new Patch
 	({
 		volume: vol,
-		transpose : [], 
+		transpose : tsp, 
 		commandOne : [], 
 		commandOneParams : [], 
 		commandTwo : [], 

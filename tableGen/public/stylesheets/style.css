@@ -1,6 +1,4 @@
-.clearButton
+#lsdjColumn
 {
-	height: 20px;
-	width: 90px;
-	display: block;
+	display: inline-block;
 }
