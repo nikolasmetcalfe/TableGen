@@ -157,7 +157,7 @@ router.post('/generate', function(req, res, next)
 	new Patch
 	({
 		volume: vol,
-		transpose : tsp, 
+		transpose : tsp,
 		commandOne : [], 
 		commandOneParams : [], 
 		commandTwo : [], 

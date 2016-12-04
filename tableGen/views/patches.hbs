@@ -1,13 +1,10 @@
 <table>
 {{#each result}}
+  <div>
     {{this.name}}<br>
     {{#each volume}}
     <div>{{this}}</div>
     {{/each}}
-  </div>
-{{/each}}
-{{#each result}}
-  <div>
     {{#each transpose}}
     <div>{{this}}</div>
     {{/each}}
