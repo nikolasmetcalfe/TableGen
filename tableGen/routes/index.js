@@ -33,8 +33,11 @@ router.get('/patches', function(req, res, next)
 });
 router.post('/generate', function(req, res, next)
 {	
+	var validCmds = ["C", "E", "c", "K", "k", "L", "l", "M", "m", "P", "p", "R", "r", "S", "s", "V", "v", "H", "h"];
+	
 	var vol = [];
 	var tsp = [];
+	var cmd = [];
 	
 	var vol0 = (req.body.vol0);
 	var vol1 = (req.body.vol1);
@@ -104,6 +107,40 @@ router.post('/generate', function(req, res, next)
 	tsp.push(tsp14);
 	tsp.push(tsp15);
 	
+	var cmd0 = (req.body.cmd0);
+	var cmd1 = (req.body.cmd1);
+	var cmd2 = (req.body.cmd2);
+	var cmd3 = (req.body.cmd3);
+	var cmd4 = (req.body.cmd4);
+	var cmd5 = (req.body.cmd5);
+	var cmd6 = (req.body.cmd6);
+	var cmd7 = (req.body.cmd7);
+	var cmd8 = (req.body.cmd8);
+	var cmd9 = (req.body.cmd9);
+	var cmd10 = (req.body.cmd10);
+	var cmd11 = (req.body.cmd11);
+	var cmd12 = (req.body.cmd12);
+	var cmd13 = (req.body.cmd13);
+	var cmd14 = (req.body.cmd14);
+	var cmd15 = (req.body.cmd15);
+	
+	cmd.push(cmd0);
+	cmd.push(cmd1);
+	cmd.push(cmd2);
+	cmd.push(cmd3);
+	cmd.push(cmd4);
+	cmd.push(cmd5);
+	cmd.push(cmd6);
+	cmd.push(cmd7);
+	cmd.push(cmd8);
+	cmd.push(cmd9);
+	cmd.push(cmd10);
+	cmd.push(cmd11);
+	cmd.push(cmd12);
+	cmd.push(cmd13);
+	cmd.push(cmd14);
+	cmd.push(cmd15);
+	
 	var temp1 = '';
 	var temp2 = '';
 	
@@ -151,6 +188,21 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	for (var i = 0; i < cmd.length; i++)
+	{
+		if (cmd[i].length === 1)
+		{
+			if (!checkCommand(cmd[i]))
+			{
+				cmd[i] = Math.floor(Math.random() * validCmds.length);
+			}
+		}
+		else
+		{
+			cmd[i] = " -- ";
+		}
+	}
+	
 	var patchName = req.body.patchName + "";
 	
 	for (var i = 0; i < tsp.length; i++)
@@ -160,7 +212,7 @@ router.post('/generate', function(req, res, next)
 	({
 		volume: vol,
 		transpose : tsp,
-		commandOne : [], 
+		commandOne : cmd, 
 		commandOneParams : [], 
 		commandTwo : [], 
 		commandTwoParams : [],
@@ -256,6 +308,52 @@ function checkInput(a)
 		return true;
 	else
 		return false;	
+}
+
+function checkCommand(a)
+{
+	if (a === "C") 
+		return true;
+	else if (a === "E")
+		return true;
+	else if (a === "c")
+		return true;
+	else if (a === "e")
+		return true;
+	else if (a === "K")
+		return true;
+	else if (a === "k")
+		return true;
+	else if (a === "L")
+		return true;
+	else if (a === "l")
+		return true;
+	else if (a === "M")
+		return true;
+	else if (a === "m")
+		return true;
+	else if (a === "P")
+		return true;
+	else if (a === "p")
+		return true;
+	else if (a === "R")
+		return true;
+	else if (a === "r")
+		return true;
+	else if (a === "S")
+		return true;
+	else if (a === "s")
+		return true;
+	else if (a === "V")
+		return true;
+	else if (a === "v")
+		return true;
+	else if (a === "H")
+		return true;
+	else if (a === "h")
+		return true;
+	else
+		return false;
 }
 
 module.exports = router;

@@ -1,11 +1,12 @@
 #volumeCell
-{
-	background-color: #fff6c9;
-	width: 50px;
+{	width: 50px;
 }
 #transposeCell
 {
-	background-color: #feecce;
+	width: 50px;
+}
+#commandCell
+{
 	width: 50px;
 }
 #lsdjColumn
@@ -30,4 +31,8 @@
 {
 	position: absolute;
 	display: inline-block;;
+}
+#navhead
+{
+	text-align: center;
 }
