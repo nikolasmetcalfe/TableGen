@@ -154,6 +154,9 @@ router.post('/generate', function(req, res, next)
 	
 	var patchName = req.body.patchName + "";
 	
+	for (var i = 0; i < tsp.length; i++)
+		console.log(tsp[i]);
+	
 	new Patch
 	({
 		volume: vol,
