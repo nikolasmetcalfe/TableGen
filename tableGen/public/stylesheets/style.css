@@ -1,4 +1,33 @@
+#volumeCell
+{
+	background-color: #fff6c9;
+	width: 50px;
+}
+#transposeCell
+{
+	background-color: #feecce;
+	width: 50px;
+}
 #lsdjColumn
 {
-	display: inline-block;
+	display: inline;
+}
+#tableLabel
+{
+	display:inline-block;
+	width: 50px;
+	background-color: #b3bded;
+	border-style: inset;
+	border-width: 1px;
+
+}
+#patchName
+{
+	margin: 10px;
+}
+
+#saveButton
+{
+	position: absolute;
+	display: inline-block;;
 }
