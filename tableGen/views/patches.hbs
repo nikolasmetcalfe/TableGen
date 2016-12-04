@@ -1,10 +1,14 @@
 {{#each result}}
+<form>
     {{this.name}}<br>
     {{#each volume}}
       <div>{{this}}</div>
     {{/each}}
-    {{this.transpose}}<br>
+    {{#each transpose}}
+    <div>{{this}}</div>
+    {{/each}}
     <br>
+</form>
 {{/each}}
 
 <br>
@@ -16,6 +20,11 @@
 <script type = "text/javascript">
 function clearPatches()
 {
-    window.location.href = "/clearAll";
+    var req = new XMLHttpRequest();
+    url = "http://localhost:3000/clearAll";
+  //  url = http://i6.cims.nyu.edu:17381/clearAll;
+    req.open('GET', url, true);
+    req.send();
+    location.reload(false);
 }
 </script>

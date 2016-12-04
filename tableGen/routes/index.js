@@ -31,7 +31,6 @@ router.get('/patches', function(req, res, next)
 		res.render('patches', {result: result});
 	});
 });
-
 router.post('/generate', function(req, res, next)
 {	
 	var vol = [];
