@@ -9,17 +9,34 @@
 {
 	width: 50px;
 }
+#paramCell
+{
+	width: 50px;
+}
 #lsdjColumn
 {
 	display: inline;
+}
+#lsdjForm
+{
+    margin: auto;
+    width: 50%;
+}
+#lsdjTable
+{
+	margin: auto;
+	width: 218px;
+}
+#tableName
+{
+	margin: auto;
+	width: 50%;
+	text-align: center;
 }
 #tableLabel
 {
 	display:inline-block;
 	width: 50px;
-	background-color: #b3bded;
-	border-style: inset;
-	border-width: 1px;
 
 }
 #patchName
@@ -29,10 +46,10 @@
 
 #saveButton
 {
-	position: absolute;
-	display: inline-block;;
+	margin: auto;
+	width: 50px;
 }
 #navhead
 {
-	text-align: center;
+	text-align:center;
 }

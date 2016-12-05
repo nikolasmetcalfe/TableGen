@@ -10,6 +10,9 @@
     {{#each commandOne}}
     <div>{{this}}</div>
     {{/each}}
+    {{#each commandOneParams}}
+    <div>{{this}}</div>
+    {{/each}}
     <br>
 </form>
 {{/each}}
@@ -24,8 +27,8 @@
 function clearPatches()
 {
     var req = new XMLHttpRequest();
-  // url = "http://localhost:3000/clearAll";
-     url = "http://i6.cims.nyu.edu:17381/clearAll";
+    //url = "http://localhost:3000/clearAll";
+    url = "http://i6.cims.nyu.edu:17381/clearAll";
     req.open('GET', url, true);
     req.send();
     location.reload(false);

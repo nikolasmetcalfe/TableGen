@@ -28,6 +28,7 @@ router.get('/patches', function(req, res, next)
 {	
 	Patch.find({}, function(err, result, count) 
 	{
+		console.log(result);
 		res.render('patches', {result: result});
 	});
 });
@@ -38,6 +39,7 @@ router.post('/generate', function(req, res, next)
 	var vol = [];
 	var tsp = [];
 	var cmd = [];
+	var prams = [];
 	
 	var vol0 = (req.body.vol0);
 	var vol1 = (req.body.vol1);
@@ -141,6 +143,40 @@ router.post('/generate', function(req, res, next)
 	cmd.push(cmd14);
 	cmd.push(cmd15);
 	
+	var prams0 = (req.body.prams0);
+	var prams1 = (req.body.prams1);
+	var prams2 = (req.body.prams2);
+	var prams3 = (req.body.prams3);
+	var prams4 = (req.body.prams4);
+	var prams5 = (req.body.prams5);
+	var prams6 = (req.body.prams6);
+	var prams7 = (req.body.prams7);
+	var prams8 = (req.body.prams8);
+	var prams9 = (req.body.prams9);
+	var prams10 = (req.body.prams10);
+	var prams11 = (req.body.prams11);
+	var prams12 = (req.body.prams12);
+	var prams13 = (req.body.prams13);
+	var prams14 = (req.body.prams14);
+	var prams15 = (req.body.prams15);
+	
+	prams.push(prams0);
+	prams.push(prams1);
+	prams.push(prams2);
+	prams.push(prams3);
+	prams.push(prams4);
+	prams.push(prams5);
+	prams.push(prams6);
+	prams.push(prams7);
+	prams.push(prams8);
+	prams.push(prams9);
+	prams.push(prams10);
+	prams.push(prams11);
+	prams.push(prams12);
+	prams.push(prams13);
+	prams.push(prams14);
+	prams.push(prams15);
+	
 	var temp1 = '';
 	var temp2 = '';
 	
@@ -203,6 +239,33 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	for (var i = 0; i < prams.length; i++)
+	{
+		if (cmd[i] !== " -- ")
+		{
+			prams[i] = "00";
+			continue;
+		}
+		if (prams[i].length === 1 || prams[i].length === 0)
+		{
+			temp1 = toHex('');
+			temp2 = toHex('');
+			prams[i] = temp1 + temp2;
+		}
+		else
+		{
+			if (checkInput(prams[i][0]))
+				temp1 = prams[i][0];
+			else
+				temp1 = toHex('');
+			if (checkInput(prams[i][1]))
+				temp2 = prams[i][1];
+			else
+				temp2 = toHex('');
+			prams[i] = temp1 + temp2;
+		}
+	}
+	
 	var patchName = req.body.patchName + "";
 	
 	for (var i = 0; i < tsp.length; i++)
@@ -213,7 +276,7 @@ router.post('/generate', function(req, res, next)
 		volume: vol,
 		transpose : tsp,
 		commandOne : cmd, 
-		commandOneParams : [], 
+		commandOneParams : prams, 
 		commandTwo : [], 
 		commandTwoParams : [],
 		name: patchName,
