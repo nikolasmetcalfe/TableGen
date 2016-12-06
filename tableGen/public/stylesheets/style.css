@@ -25,7 +25,7 @@
 #lsdjTable
 {
 	margin: auto;
-	width: 218px;
+	width: 310px; /* number of columns times 50 plus 10 */
 }
 #tableName
 {
@@ -42,14 +42,35 @@
 #patchName
 {
 	margin: 10px;
+	width: 130px;
 }
 
 #saveButton
 {
-	margin: auto;
-	width: 50px;
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 100px; /* number of columns times 50 divided by 4 */
+	width: 100px;
+	align: center;
 }
 #navhead
 {
-	text-align:center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 100%;
+	text-align: center;
+	background-image: url("/images/pixel.jpg"); /* Corresponds to topMargin */
+}
+#topMargin
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-image: url("/images/pixel.jpg"); /* Corresponds to navHead */
+}
+#navPic
+{
+	position: absolute;
+	padding-top: 10px;
+	height: 45px;
+	width: 150px;
 }

@@ -40,6 +40,8 @@ router.post('/generate', function(req, res, next)
 	var tsp = [];
 	var cmd = [];
 	var prams = [];
+	var cmdTwo = [];
+	var pramsTwo= [];
 	
 	var vol0 = (req.body.vol0);
 	var vol1 = (req.body.vol1);
@@ -177,6 +179,74 @@ router.post('/generate', function(req, res, next)
 	prams.push(prams14);
 	prams.push(prams15);
 	
+	var cmdTwo0 = (req.body.cmdTwo0);
+	var cmdTwo1 = (req.body.cmdTwo1);
+	var cmdTwo2 = (req.body.cmdTwo2);
+	var cmdTwo3 = (req.body.cmdTwo3);
+	var cmdTwo4 = (req.body.cmdTwo4);
+	var cmdTwo5 = (req.body.cmdTwo5);
+	var cmdTwo6 = (req.body.cmdTwo6);
+	var cmdTwo7 = (req.body.cmdTwo7);
+	var cmdTwo8 = (req.body.cmdTwo8);
+	var cmdTwo9 = (req.body.cmdTwo9);
+	var cmdTwo10 = (req.body.cmdTwo10);
+	var cmdTwo11 = (req.body.cmdTwo11);
+	var cmdTwo12 = (req.body.cmdTwo12);
+	var cmdTwo13 = (req.body.cmdTwo13);
+	var cmdTwo14 = (req.body.cmdTwo14);
+	var cmdTwo15 = (req.body.cmdTwo15);
+	
+	cmdTwo.push(cmdTwo0);
+	cmdTwo.push(cmdTwo1);
+	cmdTwo.push(cmdTwo2);
+	cmdTwo.push(cmdTwo3);
+	cmdTwo.push(cmdTwo4);
+	cmdTwo.push(cmdTwo5);
+	cmdTwo.push(cmdTwo6);
+	cmdTwo.push(cmdTwo7);
+	cmdTwo.push(cmdTwo8);
+	cmdTwo.push(cmdTwo9);
+	cmdTwo.push(cmdTwo10);
+	cmdTwo.push(cmdTwo11);
+	cmdTwo.push(cmdTwo12);
+	cmdTwo.push(cmdTwo13);
+	cmdTwo.push(cmdTwo14);
+	cmdTwo.push(cmdTwo15);
+	
+	var pramsTwo0 = (req.body.pramsTwo0);
+	var pramsTwo1 = (req.body.pramsTwo1);
+	var pramsTwo2 = (req.body.pramsTwo2);
+	var pramsTwo3 = (req.body.pramsTwo3);
+	var pramsTwo4 = (req.body.pramsTwo4);
+	var pramsTwo5 = (req.body.pramsTwo5);
+	var pramsTwo6 = (req.body.pramsTwo6);
+	var pramsTwo7 = (req.body.pramsTwo7);
+	var pramsTwo8 = (req.body.pramsTwo8);
+	var pramsTwo9 = (req.body.pramsTwo9);
+	var pramsTwo10 = (req.body.pramsTwo10);
+	var pramsTwo11 = (req.body.pramsTwo11);
+	var pramsTwo12 = (req.body.pramsTwo12);
+	var pramsTwo13 = (req.body.pramsTwo13);
+	var pramsTwo14 = (req.body.pramsTwo14);
+	var pramsTwo15 = (req.body.pramsTwo15);
+	
+	pramsTwo.push(pramsTwo0);
+	pramsTwo.push(pramsTwo1);
+	pramsTwo.push(pramsTwo2);
+	pramsTwo.push(pramsTwo3);
+	pramsTwo.push(pramsTwo4);
+	pramsTwo.push(pramsTwo5);
+	pramsTwo.push(pramsTwo6);
+	pramsTwo.push(pramsTwo7);
+	pramsTwo.push(pramsTwo8);
+	pramsTwo.push(pramsTwo9);
+	pramsTwo.push(pramsTwo10);
+	pramsTwo.push(pramsTwo11);
+	pramsTwo.push(pramsTwo12);
+	pramsTwo.push(pramsTwo13);
+	pramsTwo.push(pramsTwo14);
+	pramsTwo.push(pramsTwo15);
+	
 	var temp1 = '';
 	var temp2 = '';
 	
@@ -239,9 +309,24 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	for (var i = 0; i < cmdTwo.length; i++)
+	{
+		if (cmdTwo[i].length === 1)
+		{
+			if (!checkCommand(cmdTwo[i]))
+			{
+				cmdTwo[i] = Math.floor(Math.random() * validCmds.length);
+			}
+		}
+		else
+		{
+			cmdTwo[i] = " -- ";
+		}
+	}
+	
 	for (var i = 0; i < prams.length; i++)
 	{
-		if (cmd[i] !== " -- ")
+		if (cmd[i] === " -- ")
 		{
 			prams[i] = "00";
 			continue;
@@ -266,6 +351,33 @@ router.post('/generate', function(req, res, next)
 		}
 	}
 	
+	for (var i = 0; i < pramsTwo.length; i++)
+	{
+		if (cmdTwo[i] === " -- ")
+		{
+			pramsTwo[i] = "00";
+			continue;
+		}
+		if (pramsTwo[i].length === 1 || pramsTwo[i].length === 0)
+		{
+			temp1 = toHex('');
+			temp2 = toHex('');
+			pramsTwo[i] = temp1 + temp2;
+		}
+		else
+		{
+			if (checkInput(pramsTwo[i][0]))
+				temp1 = pramsTwo[i][0];
+			else
+				temp1 = toHex('');
+			if (checkInput(pramsTwo[i][1]))
+				temp2 = pramsTwo[i][1];
+			else
+				temp2 = toHex('');
+			pramsTwo[i] = temp1 + temp2;
+		}
+	}
+	
 	var patchName = req.body.patchName + "";
 	
 	for (var i = 0; i < tsp.length; i++)
@@ -277,8 +389,8 @@ router.post('/generate', function(req, res, next)
 		transpose : tsp,
 		commandOne : cmd, 
 		commandOneParams : prams, 
-		commandTwo : [], 
-		commandTwoParams : [],
+		commandTwo : cmdTwo, 
+		commandTwoParams : pramsTwo,
 		name: patchName,
 	}).save(function(err, Patch, count)
 	{
