@@ -1,32 +1,32 @@
 #volumeCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 5px #000000;
+	box-shadow: inset 0 0 4px #000000;
 }
 #transposeCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 3px #000000;
+	box-shadow: inset 0 0 2px #000000;
 }
 #commandCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 5px #000000;
+	box-shadow: inset 0 0 4px #000000;
 }
 #paramCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 3px #000000;
+	box-shadow: inset 0 0 2px #000000;
 }
 #commandTwoCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 5px #000000;
+	box-shadow: inset 0 0 4px #000000;
 }
 #paramTwoCell
 {
 	width: 50px;
-	box-shadow: inset 0 0 3px #000000;
+	box-shadow: inset 0 0 2px #000000;
 }
 #lsdjColumn
 {
@@ -52,7 +52,6 @@
 {
 	display:inline-block;
 	width: 50px;
-
 }
 #patchName
 {
@@ -113,4 +112,55 @@
 {
 	position: absolute;
 	display: inline;
+}
+#informationButton
+{
+	border: none;
+	background-color: inherit;
+}
+#hidden
+{
+	margin-top: 30px;
+	position: absolute;
+	display:inline-block;
+	width: 300px;
+	visibility: hidden;
+}
+#visible
+{
+	margin-top: 20px;
+	position: absolute;
+	display:inline-block;
+	width: 300px;
+	visibility: visible;
+}
+#volBar
+{
+	font-size: .5em;
+	background-color: #fac4be;
+}
+#tspBar
+{
+	font-size: .5em;
+	background-color: #f5e5b0;
+}
+#cmdBar
+{
+	font-size: .5em;
+	background-color: #f9ffba;
+}
+#prmBar
+{
+	font-size: .5em;
+	background-color: #ceffba;
+}
+#cmdTwoBar
+{
+	font-size: .5em;
+	background-color: #c6f2f5;
+}
+#prmTwoBar
+{
+	font-size: .5em;
+	background-color: #c1c7f5;
 }

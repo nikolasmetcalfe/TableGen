@@ -8,12 +8,10 @@
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <!-- Bootstrap -->
       <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-
       <link href = "stylesheets/style.css" rel="stylesheet">
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,10 +35,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Login</a>
           <a class="navbar-brand" href="/patches">Patches</a>
-            <a class="navbar-brand" href="/generate">Generate</a>
+          <a class="navbar-brand" href="/generate">Generate</a>
+          <input type = "submit" value = "Info" id ="informationButton" class="navbar-brand">
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,6 +55,27 @@
     </nav>
     </div>
 
+    <div class="navbar-brand" id = "hidden">
+      <div id ="volBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+      <div id ="tspBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+      <div id ="cmdBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+      <div id ="prmBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+      <div id ="cmdTwoBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+      <div id ="prmTwoBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
+      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
+      and everyone is just going to have to deal.</p></div>
+    </div>
+
     {{{body}}}
 
   </body>
@@ -64,5 +85,7 @@
   <script type="text/javascript">
   Cufon.replace('.quadrit', { fontFamily: 'Quadrit', hover: true });
   </script>
+
+  <script type="text/javascript" src=javascripts/domWork.js></script>
 
 </html>
