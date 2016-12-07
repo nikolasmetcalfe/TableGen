@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function(event)
 {
   var button = document.getElementById("informationButton");
   button.addEventListener('click', toggleInfo);
+  var clicked = document.getElementsByTagName("input");
+  
+  for (var i = 0; i < clicked.length; i++)
+	console.log(clicked[i].value);
 });
 
 function toggleInfo()

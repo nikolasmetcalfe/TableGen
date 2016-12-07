@@ -1,36 +1,46 @@
 {{#each result}}
-<form>
-    {{this.name}}<br>
+<div id= "resultPatch">
+<form id = "resultForm" method="POST" action="/generate"> <!-- Form Two -->
+    <div class = "quadrit">{{this.name}}</div>
+    <input type="checkbox" id="deleteBox" value="{{this._id}}"> <label for="deleteBox" id="deleteLabel" class = "quadrit">Delete</label><br>
+    <div id= "resultCol">
     {{#each volume}}
-      <div>{{this}}</div>
+      <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
+  <div id= "resultCol">
     {{#each transpose}}
-    <div>{{this}}</div>
+    <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
+  <div id= "resultCol">
     {{#each commandOne}}
-    <div>{{this}}</div>
+    <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
+  <div id= "resultCol">
     {{#each commandOneParams}}
-    <div>{{this}}</div>
+    <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
+  <div id= "resultCol">
     {{#each commandTwo}}
-    <div>{{this}}</div>
+    <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
+  <div id= "resultCol">
     {{#each commandTwoParams}}
-    <div>{{this}}</div>
+    <div id = "outputCell" class = "minecraft-regular">{{this}}</div>
     {{/each}}
+  </div>
     <br>
+</div>
 </form>
 {{/each}}
-
-<br>
-<a href="/">New Patch</a>
-
-<br>
-<button type="button" class="clearButton" onclick="clearPatches()">Clear Patches</button>
+<button type="button" id="clearPatches" class="clearButton" onclick="clearPatches()">Delete All</button>
 
 <script type = "text/javascript">
-function clearPatches()
+function clearPatches() /* AJAX Interaction 1 */
 {
     var req = new XMLHttpRequest();
     //url = "http://localhost:3000/clearAll";

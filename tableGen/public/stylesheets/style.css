@@ -120,7 +120,6 @@
 }
 #hidden
 {
-	margin-top: 30px;
 	position: absolute;
 	display:inline-block;
 	width: 300px;
@@ -128,7 +127,6 @@
 }
 #visible
 {
-	margin-top: 20px;
 	position: absolute;
 	display:inline-block;
 	width: 300px;
@@ -163,4 +161,45 @@
 {
 	font-size: .5em;
 	background-color: #c1c7f5;
+}
+#resultPatch
+{
+	display: block;
+	margin: auto;
+	width: 170px;
+	margin-bottom: 20px;
+}
+#resultCol
+{
+	display:inline-block;
+}
+#outputCell
+{
+	margin: 2px;
+}
+#clearPatches
+{
+	display: inline-block;
+	height: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 46%;
+	width: 100px;
+	align: center;
+	background-color: #333333;
+	color: white;
+	border: 2px solid black;
+	border-radius: 8px;
+}
+
+#clearPatches:hover
+{
+	color: black;
+	background-color: white;
+	transition-duration: 0.2s;
+	border-radius: 8px;
+}
+#deleteLabel
+{
+	font-size: .75em
 }

@@ -16,10 +16,10 @@ var Patch = new mongoose.Schema
 	commandOneParams : [String], 
 	commandTwo : [String], 
 	commandTwoParams : [String],
-	name: String
+	name: String,
 });
 
-Patch.plugin(URLSlugs('name'));
+Patch.plugin(URLSlugs('id'));
 
 mongoose.model('User', User);
 mongoose.model('Patch', Patch);

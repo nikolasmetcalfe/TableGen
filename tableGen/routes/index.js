@@ -250,6 +250,31 @@ router.post('/generate', function(req, res, next)
 	var temp1 = '';
 	var temp2 = '';
 	
+	vol = vol.map(function verifyPrams(a) //Higher Order Function 1
+	{
+		if (a.length === 1 || a === 0)
+		{
+			var temp1 = toHex('');
+			var temp2 = toHex('');
+			a = temp1 + temp2;
+			return a;
+		}
+		else
+		{
+			if (checkInput(a[0]))
+				temp1 = a[0];
+			else
+				temp1 = toHex('');
+			if (checkInput(a[1]))
+				temp2 = a[1];
+			else
+				temp2 = toHex('');
+			a = temp1 + temp2;
+			return a;
+		}
+	});
+	
+	/*
 	for (var i = 0; i < vol.length; i++)
 	{
 		if (vol[i].length === 1 || vol[i].length === 0)
@@ -271,6 +296,7 @@ router.post('/generate', function(req, res, next)
 			vol[i] = temp1 + temp2;
 		}
 	}
+	*/
 	
 	for (var i = 0; i < tsp.length; i++)
 	{
@@ -302,6 +328,7 @@ router.post('/generate', function(req, res, next)
 			{
 				cmd[i] = Math.floor(Math.random() * validCmds.length);
 			}
+			cmd[i] = cmd[i].toUpperCase();
 		}
 		else
 		{
@@ -317,6 +344,7 @@ router.post('/generate', function(req, res, next)
 			{
 				cmdTwo[i] = Math.floor(Math.random() * validCmds.length);
 			}
+			cmdTwo[i] = cmdTwo[i].toUpperCase();
 		}
 		else
 		{
@@ -380,8 +408,7 @@ router.post('/generate', function(req, res, next)
 	
 	var patchName = req.body.patchName + "";
 	
-	for (var i = 0; i < tsp.length; i++)
-		console.log(tsp[i]);
+	var iDee = Math.floor(Math.random() * 1000000000);
 	
 	new Patch
 	({
