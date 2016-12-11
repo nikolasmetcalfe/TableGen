@@ -94,6 +94,9 @@ router.get('/clearAll', function(req, res, next)
 	}
 	else
 	{
+		console.log("BLAH");
+		console.log(req.session.username);
+		
 		User.findOne({username: req.session.username}, function(err, result, count)
 		{
 			result.patches = [];
@@ -129,7 +132,7 @@ router.post('/deleteSelected', function (req, res, next)
 		{
 			Patch.remove({_id: new mongodb.ObjectID(req.body.deleteBox)}, function(err, result, count)
 			{
-				Patch.find({}, function(err, result, count) 
+				Patch.find({user: req.session.username}, function(err, result, count) 
 				{
 					res.render('patches', {result: result});
 				});
@@ -141,7 +144,7 @@ router.post('/deleteSelected', function (req, res, next)
 			{
 				Patch.remove({_id: new mongodb.ObjectID(req.body.deleteBox[i])}, function(err, result, count)
 				{
-					Patch.find({}, function(err, result, count) 
+					Patch.find({user: req.session.username}, function(err, result, count) 
 					{
 						res.render('patches', {result: result});
 					});
