@@ -769,7 +769,6 @@ function checkIfLetter(a)
 			}
 		}
 	}
-	console.log("False A");
 	return false;
 }
 
