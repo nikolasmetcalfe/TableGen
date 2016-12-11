@@ -57,5 +57,5 @@ User Stories
 3. As a user, I can view all tables saved under my username at /patches
 
 Research Topics
-(6 Points)-- Use passport.js for user authentication in order to ensure patches are retrieved by correct users
+(4 Points)-- Use Cufon fonts to render standard text as bitreduced fonts
 (2 Points)-- Use bootstrap CSS in order to make patch specific pages both clean and standardized
