@@ -93,10 +93,7 @@ router.get('/clearAll', function(req, res, next)
 		return;
 	}
 	else
-	{
-		console.log("BLAH");
-		console.log(req.session.username);
-		
+	{		
 		User.findOne({username: req.session.username}, function(err, result, count)
 		{
 			result.patches = [];
@@ -154,7 +151,7 @@ router.post('/deleteSelected', function (req, res, next)
 	}
 	else
 	{
-		res.render('patches', {res, res});
+		res.render('patches', {res: res});
 	}
 });
 
