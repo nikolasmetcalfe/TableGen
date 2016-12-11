@@ -19,7 +19,6 @@ router.get('/', function(req, res, next)
 router.get('/login', function(req, res, next)
 {
 	name = req.session.username || "-";
-	console.log(name);
 	res.render('login');
 });
 
@@ -766,7 +765,6 @@ function checkIfLetter(a)
 			alphabet[i] = alphabet[i].toUpperCase();
 			if (a == alphabet[i])
 			{
-//				console.log(alphabet[i]);
 				return true;
 			}
 		}
@@ -777,7 +775,6 @@ function checkIfLetter(a)
 
 function checkIfNumber(a) 
 {
-//	console.log(Number(parseFloat(a)) == a);
     return Number(parseFloat(a)) == a;
 }
 
