@@ -1,8 +1,23 @@
 {
   "name": "njm285-final-project",
   "version": "1.0.0",
-  "description": "Serves and saves randomized LSDJ table presets",
+  "description": "Generates LSDJ Pulse Tables",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.14.2",
+    "express": "^4.14.0",
+    "hbs": "^4.0.1",
+    "jquery": "^3.1.1",
+    "mongoose": "^4.6.8",
+    "mongoose-url-slugs": "^0.2.1",
+    "morgan": "^1.7.0",
+    "node-uuid": "^1.4.7",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,24 +30,5 @@
   "bugs": {
     "url": "https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project/issues"
   },
-  "homepage": "https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "bootstrap": "^3.3.7",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.14.0",
-    "express-session": "^1.14.2",
-    "hbs": "^4.0.1",
-    "jquery": "^3.1.1",
-    "mongoose": "^4.6.8",
-    "mongoose-url-slugs": "^0.2.1",
-    "morgan": "^1.7.0",
-<<<<<<< HEAD
-    "serve-favicon": "^2.3.0",
-    "forever": "~0.15.3"
-=======
-    "node-uuid": "^1.4.7",
-    "serve-favicon": "^2.3.0"
->>>>>>> 88377a7cd58e16b990982b913f1d2fcbab334ba1
-  }
+  "homepage": "https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project#readme"
 }
