@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Login</a>
+          <a class="navbar-brand" href="/login">Login</a>
           <a class="navbar-brand" href="/generate">Generate</a>
           <a class="navbar-brand" href="/patches">Patches</a>
           <input type = "submit" value = "Info" id ="informationButton" class="navbar-brand">
@@ -56,24 +56,26 @@
     </div>
 
     <div class="navbar-brand" id = "hidden">
-      <div id ="volBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
-      <div id ="tspBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
-      <div id ="cmdBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
-      <div id ="prmBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
-      <div id ="cmdTwoBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
-      <div id ="prmTwoBar"><p id = "volumeText">Volume is a dumb thing about blah blah blah and a lot of copy goes here
-      this copy is very important and I will write it tomorrow but right now I am not writing it I'm testing it
-      and everyone is just going to have to deal.</p></div>
+      <div id ="topBar"><p class="quadrit" id = "volumeText">Enter "X" to Randomize the Output of a Cell!</p></div>
+      <div id ="volBar"><p id = "volumeText">Volume inputs are randomized by default. They are used to shape the
+      amplitude envelope of an instrument, which makes a randomized list of volume settings particularly good at adding character
+      to an otherwise flat lead.</p></div>
+      <div id ="tspBar"><p id = "volumeText">Transpose inputs are not randomized by default. Their values are used to shift
+      the pitch of an instrument by the set number of semitones. Entering an invalid hex input in any cell will produce
+      a randomized value, which can be useful when the pulse channel is being used for rhythmic, atmospheric, and all around
+      non-tonal sound.</p></div>
+      <div id ="cmdBar"><p id = "volumeText">Command inputs change the shape of a sound in a variety of ways, depending
+      on the command. Valid keys are: "C", "E", "H", "K", "L", "M", "P", "R", "S", and "V". Inputting an invalid key will
+      generate a randomly selected valid command. These values are not randomized by default.</p></div>
+      <div id ="prmBar"><p id = "volumeText">Command parameters shape one of two things: how the command executes, or the
+      extent to which it is executed. For every command processed by the table, a random command parameter will be assigned in output
+      (assuming you do not enter one yourself). These values are not randomized by default. </p></div>
+      <div id ="cmdTwoBar"><p id = "volumeText">Command(2) inputs change the shape of a sound in a variety of ways, depending
+      on the command. Valid keys are: "C", "E", "H", "K", "L", "M", "P", "R", "S", and "V". Inputting an invalid key will
+      generate a randomly selected valid command. These values are not randomized by default.</p></div>
+      <div id ="prmTwoBar"><p id = "volumeText">Command(2) parameters shape one of two things: how the command executes, or the
+      extent to which it is executed. For every command processed by the table, a random command parameter will be assigned in output
+      (assuming you do not enter one yourself). These values are not randomized by default.</p></div>
     </div>
 
     {{{body}}}
@@ -87,7 +89,6 @@
   Cufon.replace('.quadrit', { fontFamily: 'Quadrit', hover: true });
   Cufon.replace('.minecraft-regular', { fontFamily: 'Minecraft Regular', hover: true });
   </script>
-
   <script type="text/javascript" src=javascripts/domWork.js></script>
 
 </html>

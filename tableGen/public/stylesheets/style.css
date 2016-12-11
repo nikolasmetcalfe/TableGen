@@ -166,7 +166,7 @@
 {
 	display: block;
 	margin: auto;
-	width: 170px;
+	width: 200px;
 	margin-bottom: 20px;
 }
 #resultCol
@@ -175,7 +175,7 @@
 }
 #outputCell
 {
-	margin: 2px;
+	margin: 4px;
 }
 #clearPatches
 {
@@ -183,7 +183,7 @@
 	height: 30px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	margin-left: 46%;
+	margin-left: 45%;
 	width: 100px;
 	align: center;
 	background-color: #333333;
@@ -191,7 +191,6 @@
 	border: 2px solid black;
 	border-radius: 8px;
 }
-
 #clearPatches:hover
 {
 	color: black;
@@ -202,4 +201,42 @@
 #deleteLabel
 {
 	font-size: .75em
+}
+#randomBox
+{
+	display:block;
+}
+#randomText
+{
+	display:block;
+	font-size: .75em;
+}
+#topBar
+{
+	font-size: .55em;
+}
+#loginButton
+{
+	height: 30px;
+	margin-top: 20px;
+	margin-left: 100px; /* number of columns times 50 divided by 4 */
+	margin-bottom: 20px;
+	width: 100px;
+	align: center;
+  background-color: #333333;
+  color: white;
+  border: 2px solid black;
+	border-radius: 8px;
+}
+#loginButton:hover
+{
+	color: black;
+	background-color: white;
+	transition-duration: 0.2s;
+	border-radius: 8px;
+}
+#Disclaimer
+{
+	font-size: .75em;
+	text-align: center;
 }
