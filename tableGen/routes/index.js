@@ -598,6 +598,8 @@ function checkInput(a)
 {
 	if (a === "1")
 		return true;
+	else if (a === "0")
+		return true;
 	else if (a === "2")
 		return true;
 	else if (a === "3")
