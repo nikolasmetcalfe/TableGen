@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next)
 	var requestName = req.body.username;
 	var requestPass = req.body.password;
 	
-								/* LOGIN ERROR HANDLING */
+									/* LOGIN ERROR HANDLING */
 	
 	if (requestName === undefined || requestName === null || requestPass === undefined || requestPass === null || (requestName.length === 0) || (requestPass.length == 0))
 	{
