@@ -26,22 +26,22 @@ mongoose.model('User', User);
 mongoose.model('Patch', Patch);
 
 // is the environment variable, NODE_ENV, set to PRODUCTION? 
-if (process.env.NODE_ENV == 'PRODUCTION') 
+// if (process.env.NODE_ENV == 'PRODUCTION') 
 {
- // if in PRODUCTION mode, then read the configration from a file
- // use blocking file io to do this
- var fs = require('fs');
- var path = require('path');
- var fn = path.join(__dirname, 'config.json');
- var data = fs.readFileSync(fn);
+// if in PRODUCTION mode, then read the configration from a file
+// use blocking file io to do this
+// var fs = require('fs');
+// var path = require('path');
+// var fn = path.join(__dirname, 'config.json');
+// var data = fs.readFileSync(fn);
 
- var conf = JSON.parse(data);
- var dbconf = conf.dbconf;
+// var conf = JSON.parse(data);
+// var dbconf = conf.dbconf;
 } 
-else 
-{
+// else 
+// {
  // if not in PRODUCTION mode, then use
- dbconf = 'mongodb://localhost/patches';
-}
+ dbconf = 'mongodb://nikolas:dbpword2!@ds127802.mlab.com:27802/heroku_b2r0fs30';
+// }
 
 mongoose.connect(dbconf);
