@@ -1,5 +1,5 @@
 {
-  "name": "njm285-final-project",
+  "name": "TableGen",
   "version": "1.0.0",
   "description": "Generates LSDJ Pulse Tables",
   "main": "index.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project.git"
+    "url": "git+https://github.com/nikolasmetcalfe/TableGen.git"
   },
   "author": "Nick Metcalfe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project/issues"
+    "url": "https://github.com/nikolasmetcalfe/TableGen/issues"
   },
-  "homepage": "https://github.com/nyu-csci-ua-0480-007-fall-2016/njm285-final-project#readme"
+  "homepage": "https://github.com/nikolasmetcalfe/TableGen#readme"
 }
