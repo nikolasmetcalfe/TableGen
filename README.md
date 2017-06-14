@@ -55,7 +55,3 @@ User Stories
 1. As a user, I can create an entirely random table from the generation page
 2. As a user, I can save that table to my profile
 3. As a user, I can view all tables saved under my username at /patches
-
-Research Topics
-(4 Points)-- Use Cufon fonts to render standard text as bitreduced fonts
-(2 Points)-- Use bootstrap CSS in order to make patch specific pages both clean and standardized
